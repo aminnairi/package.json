@@ -15,11 +15,11 @@ export default {
             targets: [
                 {
                     src: resolve("sources", "index.html"),
-                    dest: resolve("build")
+                    dest: resolve("docs")
                 },
                 {
                     src: resolve("sources", "icon.png"),
-                    dest: resolve("build")
+                    dest: resolve("docs")
                 }
             ]
         }),
@@ -36,7 +36,7 @@ export default {
         terser()
     ],
     output: {
-        file: resolve("build", "index.js"),
+        file: resolve("docs", "index.js"),
         format: "iife"
     }
 }
