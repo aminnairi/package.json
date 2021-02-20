@@ -70,6 +70,10 @@ getElementById("body", document)
                 getElementById("refresh", document)
                     .andThen(click)
                     .whenError(console.error);
+            } else if (code === "KeyI") {
+                getElementById("issue", document)
+                    .andThen(click)
+                    .whenError(console.error);
             }
         }
     }))
