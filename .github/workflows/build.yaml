@@ -24,7 +24,7 @@ jobs:
         run: git config user.email "aminnairi@noreply.users.github.com"
 
       - name: Stage the changes
-        run: git add docs
+        run: git add --force docs
 
       - name: Commit the changes
         run: 'git commit --message ":package: production build" || true'
