@@ -57,4 +57,4 @@ export default {
         file: resolve("docs", "index.js"),
         format: "iife"
     }
-}
+};
