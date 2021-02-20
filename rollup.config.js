@@ -7,10 +7,16 @@ import commonjs from "@rollup/plugin-commonjs";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
+import remove from "rollup-plugin-delete";
 
 export default {
     input: resolve("sources", "index.mjs"),
     plugins: [
+        remove({
+            targets: [
+                resolve("docs", "**", "*")
+            ]
+        }),
         copy({
             targets: [
                 {
@@ -19,6 +25,10 @@ export default {
                 },
                 {
                     src: resolve("sources", "icon.png"),
+                    dest: resolve("docs")
+                },
+                {
+                    src: resolve("sources", "manifest.webmanifest"),
                     dest: resolve("docs")
                 }
             ]
