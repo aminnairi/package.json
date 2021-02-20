@@ -28,6 +28,10 @@ export default {
                     dest: resolve("docs")
                 },
                 {
+                    src: resolve("sources", "apple-touch-icon.png"),
+                    dest: resolve("docs")
+                },
+                {
                     src: resolve("sources", "manifest.webmanifest"),
                     dest: resolve("docs")
                 }
