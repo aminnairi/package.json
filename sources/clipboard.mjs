@@ -1,3 +1,8 @@
+/**
+ * Copy a text to the system clipboard
+ * @param {string} text Text to copy to the system clipboard
+ * @return {Promise<void>}
+ */
 export const copy = text => {
     return new Promise((resolve, reject) => {
         if (typeof text !== "string") {
