@@ -34,6 +34,10 @@ export default {
                 {
                     src: resolve("sources", "manifest.webmanifest"),
                     dest: resolve("docs")
+                },
+                {
+                    src: resolve("sources", "LICENSE"),
+                    dest: resolve("docs")
                 }
             ]
         }),
