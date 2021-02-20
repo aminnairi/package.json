@@ -24,7 +24,15 @@ const packageJson = {
     os: [],
     cpu: [],
     publishConfig: {registry: ""},
-    workspaces: []
+    workspaces: [],
+    directories: {
+        lib: "",
+        bin: "",
+        man: "",
+        doc: "",
+        example: "",
+        test: ""
+    }
 };
 
 getElementById("code", document)
@@ -351,6 +359,60 @@ getElementById("publishconfigregistry", document)
 getElementById("workspaces", document)
     .andThen(on("input", ({target: {value}}) => {
         return objectPropertySet(packageJson, ["workspaces"], value.split(",").map(workspace => workspace.trim()).filter(Boolean))
+            .andThen(() => getElementById("code", document))
+            .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson), null, 2)))
+            .whenError(console.error);
+    }))
+    .whenError(console.error);
+
+getElementById("directoriesbin", document)
+    .andThen(on("input", ({target: {value}}) => {
+        return objectPropertySet(packageJson, ["directories", "bin"], value.trim())
+            .andThen(() => getElementById("code", document))
+            .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson), null, 2)))
+            .whenError(console.error);
+    }))
+    .whenError(console.error);
+
+getElementById("directorieslib", document)
+    .andThen(on("input", ({target: {value}}) => {
+        return objectPropertySet(packageJson, ["directories", "lib"], value.trim())
+            .andThen(() => getElementById("code", document))
+            .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson), null, 2)))
+            .whenError(console.error);
+    }))
+    .whenError(console.error);
+
+getElementById("directoriesman", document)
+    .andThen(on("input", ({target: {value}}) => {
+        return objectPropertySet(packageJson, ["directories", "man"], value.trim())
+            .andThen(() => getElementById("code", document))
+            .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson), null, 2)))
+            .whenError(console.error);
+    }))
+    .whenError(console.error);
+
+getElementById("directoriesdoc", document)
+    .andThen(on("input", ({target: {value}}) => {
+        return objectPropertySet(packageJson, ["directories", "doc"], value.trim())
+            .andThen(() => getElementById("code", document))
+            .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson), null, 2)))
+            .whenError(console.error);
+    }))
+    .whenError(console.error);
+
+getElementById("directoriesexample", document)
+    .andThen(on("input", ({target: {value}}) => {
+        return objectPropertySet(packageJson, ["directories", "example"], value.trim())
+            .andThen(() => getElementById("code", document))
+            .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson), null, 2)))
+            .whenError(console.error);
+    }))
+    .whenError(console.error);
+
+getElementById("directoriestest", document)
+    .andThen(on("input", ({target: {value}}) => {
+        return objectPropertySet(packageJson, ["directories", "test"], value.trim())
             .andThen(() => getElementById("code", document))
             .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson), null, 2)))
             .whenError(console.error);
