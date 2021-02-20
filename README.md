@@ -1,6 +1,6 @@
 # package.json
 
-[[![Code Style](https://github.com/aminnairi/package.json/actions/workflows/codestyle.yaml/badge.svg)](https://github.com/aminnairi/package.json/actions/workflows/codestyle.yaml)](https://github.com/aminnairi/package.json/actions/workflows/codestyle.yaml) [[![Build](https://github.com/aminnairi/package.json/actions/workflows/build.yaml/badge.svg)](https://github.com/aminnairi/package.json/actions/workflows/build.yaml)](https://github.com/aminnairi/package.json/actions/workflows/build.yaml)
+[![Code Style](https://github.com/aminnairi/package.json/actions/workflows/codestyle.yaml/badge.svg)](https://github.com/aminnairi/package.json/actions/workflows/codestyle.yaml) [![Build](https://github.com/aminnairi/package.json/actions/workflows/build.yaml/badge.svg)](https://github.com/aminnairi/package.json/actions/workflows/build.yaml)
 
 Create your Node.js project's package.json file from your browser.
 
