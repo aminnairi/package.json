@@ -8,161 +8,166 @@
         <meta name="theme-color" content="#000000">
         <meta name="robots" content="index,follow">
         <title>Package JSON</title>
-        <link rel="stylesheet" href="./index.css">
+        <link rel="preload" href="./index.css" as="style">
         <link rel="icon" href="./icon.png">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
         <link rel="manifest" href="./manifest.webmanifest">
+        <script src="./index.js" async></script>
     </head>
     <body id="body" class="p-3 max-w-md mx-auto">
-        <h1 class="text-center uppercase">package.json</h1>
+        <a href=""><h1 class="text-center uppercase">package.json</h1></a>
         <form id="form">
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="name" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Name</label>
-                <input type="text" id="name" class="border-gray-700 outline-none block w-full h-full" autofocus>
+                <input type="text" id="name" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: @user/package" autofocus>
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="description" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Description</label>
-                <input type="text" id="description" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="description" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: an awesome module">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="version" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Version</label>
-                <input type="text" id="version" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="version" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: 0.1.0">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="authorname" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Author Name</label>
-                <input type="text" id="authorname" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="authorname" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: John DOE">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="authorurl" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Author URL</label>
-                <input type="text" id="authorurl" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="authorurl" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: johndoe.com">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="authoremail" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Author Email</label>
-                <input type="email" id="authoremail" class="border-gray-700 outline-none block w-full h-full">
+                <input type="email" id="authoremail" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: johndoe@johndoe.com">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="keywords" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Keywords</label>
-                <input type="text" id="keywords" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="keywords" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: javascript,nodejs,keyword">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="homepage" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Home page</label>
-                <input type="text" id="homepage" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="homepage" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: https://github.com/johndoe/package#readme">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="bugsurl" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Bugs URL</label>
-                <input type="text" id="bugsurl" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="bugsurl" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: https://github.com/johndoe/package/issues">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="bugsemail" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Bugs Email</label>
-                <input type="email" id="bugsemail" class="border-gray-700 outline-none block w-full h-full">
+                <input type="email" id="bugsemail" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: johndoe@johndoe.com">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="license" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">License</label>
-                <input type="text" id="license" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="license" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: MIT">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="fundingtype" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Funding Type</label>
-                <input type="text" id="fundingtype" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="fundingtype" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: patreon">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="fundingurl" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Funding URL</label>
-                <input type="text" id="fundingurl" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="fundingurl" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: https://patreon.com/package">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="files" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Files</label>
-                <input type="text" id="files" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="files" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: index.js,index.js.map,index.d.ts">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="main" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Main</label>
-                <input type="text" id="main" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="main" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: index.js">
+            </div>
+            <div class="relative border border-solid border-black m-2 rounded-sm p-3">
+                <label for="types" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Types</label>
+                <input type="text" id="types" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: index.d.ts">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="browser" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Browser</label>
-                <input type="text" id="browser" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="browser" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: index.browser.js">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="bin" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Bin</label>
-                <input type="text" id="bin" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="bin" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: binary.js">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="manname" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Man Name</label>
-                <input type="text" id="manname" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="manname" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: package">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="manversion" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Man Version</label>
-                <input type="text" id="manversion" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="manversion" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: 0.1.0">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="mandescription" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Man Description</label>
-                <input type="text" id="mandescription" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="mandescription" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: an awesome module">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="manmain" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Man Main</label>
-                <input type="text" id="manmain" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="manmain" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: binary.js">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="manman" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Man Paths</label>
-                <input type="text" id="manman" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="manman" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: binary.1">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="repositorytype" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Repository Type</label>
-                <input type="text" id="repositorytype" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="repositorytype" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: git">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="repositoryurl" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Repository URL</label>
-                <input type="text" id="repositoryurl" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="repositoryurl" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: https://github.com/user/package.git">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="repositorydirectory" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Repository Directory</label>
-                <input type="text" id="repositorydirectory" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="repositorydirectory" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: .">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="enginesnode" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Node Engine</label>
-                <input type="text" id="enginesnode" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="enginesnode" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: >=15.0.0">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="enginesnpm" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">NPM Engine</label>
-                <input type="text" id="enginesnpm" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="enginesnpm" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: >=6.0.0">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="operatingsystems" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Operating Systems</label>
-                <input type="text" id="operatingsystems" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="operatingsystems" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: darwin,win32,linux">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="centralprocessingunits" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">CPUs</label>
-                <input type="text" id="centralprocessingunits" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="centralprocessingunits" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: x64,arm,mips">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="publishconfigregistry" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Publish Config Registry</label>
-                <input type="text" id="publishconfigregistry" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="publishconfigregistry" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: https://pkg.npm.github.com/">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="workspaces" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Workspaces</label>
-                <input type="text" id="workspaces" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="workspaces" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: package1,package2">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="directorieslib" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Lib Directory</label>
-                <input type="text" id="directorieslib" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="directorieslib" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: lib">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="directoriesbin" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Bin Directory</label>
-                <input type="text" id="directoriesbin" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="directoriesbin" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: bin">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="directoriesman" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Man Directory</label>
-                <input type="text" id="directoriesman" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="directoriesman" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: man">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="directoriesdoc" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Doc Directory</label>
-                <input type="text" id="directoriesdoc" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="directoriesdoc" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: doc">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="directoriesexample" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Example Directory</label>
-                <input type="text" id="directoriesexample" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="directoriesexample" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: example">
             </div>
             <div class="relative border border-solid border-black m-2 rounded-sm p-3">
                 <label for="directoriestest" class="absolute top-0 left-1 bg-white text-black transform -translate-y-1/2 px-1 text-xs">Test Directory</label>
-                <input type="text" id="directoriestest" class="border-gray-700 outline-none block w-full h-full">
+                <input type="text" id="directoriestest" class="border-gray-700 outline-none block w-full h-full" placeholder="Ex: test">
             </div>
             <div class="flex flex-row justify-center items-center">
                 <button id="copy" type="button" title="ALT-C" class="rounded-sm bg-black text-white px-4 py-2 mr-1 uppercase">copy</button>
@@ -173,6 +178,5 @@
         <pre class="bg-grey-300 overflow-x-auto w-full"><code id="code"></code></pre>
         <small class="text-center block text-gray-400">Logo made by <a href="https://www.freepik.com" title="Freepik" target="blank">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="blank">www.flaticon.com</a></small>
         <small class="text-center block text-gray-400">Made with ❤️ by <a href="https://github.com/aminnairi/" title="Freepik" target="blank">aminnairi</a></small>
-        <script src="./index.js"></script>
     </body>
 </html>
