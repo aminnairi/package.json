@@ -38,6 +38,10 @@ export default {
                 {
                     src: resolve("sources", "LICENSE"),
                     dest: resolve("docs")
+                },
+                {
+                    src: resolve("sources", "sitemap.xml"),
+                    dest: resolve("docs")
                 }
             ]
         }),
