@@ -54,7 +54,7 @@ export const objectEmpty = (target) => {
             target[key] = 0;
         }
 
-        if (Array.isArray(targetValueType)) {
+        if (Array.isArray(targetValue)) {
             target[key] = [];
         }
 
