@@ -6,34 +6,53 @@ import {copy} from "./clipboard.mjs";
 import {removeTrailingLeadingSpaces, toList} from "./string.mjs";
 
 const packageJson = {
-    name: "",
-    description: "",
-    version: "",
     author: {name: "", url: "", email: ""},
-    keywords: [],
-    homepage: "",
-    bugs: {url: "", email: ""},
-    license: "",
-    funding: {type: "", url: ""},
-    files: [],
-    main: "",
-    browser: "",
     bin: "",
-    man: {name: "", version: "", description: "", main: "", man: []},
-    repository: {type: "", url: "", directory: ""},
-    engines: {node: "", npm: ""},
-    os: [],
+    browser: "",
+    bugs: {url: "", email: ""},
     cpu: [],
-    publishConfig: {registry: ""},
-    workspaces: [],
+    description: "",
     directories: {
-        lib: "",
         bin: "",
-        man: "",
         doc: "",
         example: "",
+        lib: "",
+        man: "",
         test: ""
-    }
+    },
+    engines: {
+        node: "",
+        npm: ""
+    },
+    files: [],
+    funding: {
+        type: "",
+        url: ""
+    },
+    homepage: "",
+    keywords: [],
+    license: "",
+    main: "",
+    man: {
+        description: "",
+        main: "",
+        man: [],
+        name: "",
+        version: ""
+    },
+    name: "",
+    os: [],
+    publishConfig: {
+        registry: ""
+    },
+    repository: {
+        directory: "",
+        type: "",
+        url: ""
+    },
+    types: "",
+    version: "",
+    workspaces: []
 };
 
 createElement("link")
