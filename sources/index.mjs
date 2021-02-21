@@ -1,4 +1,4 @@
-import "./index.css";
+import "./css/index.css";
 
 import {getElementById, on, setAttribute, reset, focus, click, createElement, appendTo} from "./javascript/dom.mjs";
 import {objectPropertySet, objectEmpty, objectLean} from "./javascript/object.mjs";
