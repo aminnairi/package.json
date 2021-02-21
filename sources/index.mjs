@@ -56,7 +56,7 @@ const packageJson = {
 };
 
 createElement("link")
-    .andThen(setAttribute("href", "./index.css"))
+    .andThen(setAttribute("href", "./css/index.css"))
     .andThen(setAttribute("rel", "stylesheet"))
     .andThen(appendTo(document.head))
     .whenError(console.error);
