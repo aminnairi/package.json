@@ -28,15 +28,11 @@ export default {
                     dest: resolve("docs")
                 },
                 {
-                    src: resolve("sources", "manifest.webmanifest"),
+                    src: resolve("sources", "assets", "*"),
                     dest: resolve("docs")
                 },
                 {
                     src: resolve("sources", "LICENSE"),
-                    dest: resolve("docs")
-                },
-                {
-                    src: resolve("sources", "sitemap.xml"),
                     dest: resolve("docs")
                 }
             ]
