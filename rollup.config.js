@@ -53,7 +53,7 @@ export default {
                 autoprefixer,
                 cssnano
             ],
-            extract: true
+            extract: "css/index.css"
         }),
         terser()
     ],
