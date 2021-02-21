@@ -1,16 +1,35 @@
 {
-  "name": "node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@aminnairi/package.json",
+  "description": "Create your Node.js project's package.json file from your browser.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Amin NAIRI",
+    "url": "https://github.com/aminnairi",
+    "email": "aminnairi@noreply.users.github.com"
+  },
+  "keywords": [
+    "package",
+    "json",
+    "packagejson",
+    "package-json"
+  ],
+  "homepage": "https://github.com/aminnairi/package.json#readme",
+  "bugs": {
+    "url": "https://github.com/aminnairi/package.json/issues",
+    "email": "aminnairi@noreply.users.github.com"
+  },
+  "license": "MIT",
+  "browser": "docs/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aminnairi/package.json.git",
+    "directory": "."
+  },
   "scripts": {
     "lint": "eslint .",
     "watch": "rollup --config rollup.config.js --watch",
     "build": "rollup --config rollup.config.js --environment NODE_ENV:production"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
