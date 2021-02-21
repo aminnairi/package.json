@@ -24,11 +24,7 @@ export default {
                     dest: resolve("docs")
                 },
                 {
-                    src: resolve("sources", "icon.png"),
-                    dest: resolve("docs")
-                },
-                {
-                    src: resolve("sources", "apple-touch-icon.png"),
+                    src: resolve("sources", "images"),
                     dest: resolve("docs")
                 },
                 {
