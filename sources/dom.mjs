@@ -1,6 +1,16 @@
 import {error, ok} from "./result.mjs";
 import {curry} from "./functional.mjs";
 
+export const createElement = (name) => {
+    if (typeof name !== "string") {
+        return error(`name is not a string in createElement(name), received ${JSON.stringify(name)}`);
+    }
+
+    const element = document.createElement(name);
+
+    return ok(element);
+};
+
 export const getElementById = (identifier, element) => {
     if (typeof identifier !== "string") {
         return error(`identifier is not a string in getElementById(identifier, element), received ${JSON.stringify(identifier)}`);
@@ -97,3 +107,17 @@ export const click = element => {
     element.click();
     return ok(element);
 }
+
+export const appendTo = curry((parent, children) => {
+    if (!(parent instanceof Element)) {
+        return error(`parent is not an Element in appendTo(parent, children), received ${JSON.stringify(parent)}`);
+    }
+
+    if (!(children instanceof Element)) {
+        return error(`children is not an Element in appendTo(parent, children), received ${JSON.stringify(children)}`);
+    }
+
+    parent.appendChild(children);
+
+    return ok(children);
+});
