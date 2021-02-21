@@ -20,22 +20,21 @@ export const objectPropertySet = curry((target, paths, value) => {
 
     const [path, ...remainingPaths] = paths;
 
-    if (target[path] === undefined) {
-        return error(`cannot find path ${path} in ${JSON.stringify(target)}`);
-    }
+    if (remainingPaths.length !== 0) {
+        if (target[path] === undefined) {
+            target[path] = {};
+        }
 
-    if (remainingPaths.length > 0) {
         objectPropertySet(target[path], remainingPaths, value);
-        return ok(target);
+    } else {
+        target[path] = value;
     }
-
-    target[path] = value;
 
     return ok(target);
 });
 
 export const objectEmpty = (target) => {
-    if (typeof target !== "object") {
+    if (Object.prototype.toString.call(target) !== "[object Object]") {
         return error(`target is not an object in objectEmpty(target), received ${JSON.stringify(target)}`);
     }
 
@@ -68,11 +67,16 @@ export const objectEmpty = (target) => {
 };
 
 export const objectLean = target => {
-    return Object.entries(target).reduce((oldTarget, [key, value]) => {
+    if (Object.prototype.toString.call(target) !== "[object Object]") {
+        console.log("mauvais target");
+        return error(`target is not an object in objectLean(target), received ${JSON.stringify(target)}`);
+    }
+
+    return ok(Object.entries(target).reduce((oldTarget, [key, value]) => {
         const valueType = Object.prototype.toString.call(value);
 
         if (valueType === "[object Object]") {
-            const leaned = objectLean(value);
+            const leaned = objectLean(value).withDefault({});
 
             if (Object.keys(leaned).length === 0) {
                 return oldTarget;
@@ -96,5 +100,5 @@ export const objectLean = target => {
         }
 
         return {...oldTarget, [key]: value};
-    }, {});
+    }, {}));
 };
