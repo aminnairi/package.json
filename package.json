@@ -27,6 +27,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "test": "mocha",
     "watch": "rollup --config rollup.config.js --watch",
     "build": "rollup --config rollup.config.js --environment NODE_ENV:production"
   },
