@@ -2,16 +2,16 @@ import {ok, error} from "./result.mjs";
 import {curry} from "./functional.mjs";
 
 export const objectPropertySet = curry((target, paths, value) => {
+    if (typeof target !== "object") {
+        return error(`target is not an object in objectPropertySet(paths, value, target), received ${JSON.stringify(target)}`);
+    }
+
     if (!Array.isArray(paths)) {
         return error(`paths is not an array in objectPropertySet(paths, value, target), received ${JSON.stringify(paths)}`);
     }
 
     if (paths.some(path => typeof path !== "string")) {
         return error(`paths does not contain only strings in objectPropertySet(paths, value, target), received ${JSON.stringify(paths)}`);
-    }
-
-    if (typeof target !== "object") {
-        return error(`target is not an object in objectPropertySet(paths, value, target), received ${JSON.stringify(target)}`);
     }
 
     if (paths.length === 0) {
