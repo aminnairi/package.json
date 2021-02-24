@@ -62,28 +62,28 @@ createElement("link")
     .whenError(console.error);
 
 window.addEventListener("load", () => {
-    getElementById("code", document)
+    getElementById("code")
         .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
         .whenError(console.error);
 
-    getElementById("form", document)
+    getElementById("form")
         .andThen(on("submit", event => event.preventDefault()))
         .whenError(console.error);
 
-    getElementById("refresh", document)
+    getElementById("refresh")
         .andThen(on("click", () => {
-            getElementById("form", document)
+            getElementById("form")
                 .andThen(reset)
                 .andThen(() => objectEmpty(packageJson))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
-                .andThen(() => getElementById("name", document))
+                .andThen(() => getElementById("name"))
                 .andThen(focus)
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("copy", document)
+    getElementById("copy")
         .andThen(on("click", () => {
             copy(JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)).then(() => {
                 alert("Copied!");
@@ -94,19 +94,19 @@ window.addEventListener("load", () => {
         }))
         .whenError(console.error);
 
-    getElementById("body", document)
+    getElementById("body")
         .andThen(on("keydown", ({altKey, code}) => {
             if (altKey) {
                 if (code === "KeyC") {
-                    getElementById("copy", document)
+                    getElementById("copy")
                         .andThen(click)
                         .whenError(console.error);
                 } else if (code === "KeyR") {
-                    getElementById("refresh", document)
+                    getElementById("refresh")
                         .andThen(click)
                         .whenError(console.error);
                 } else if (code === "KeyI") {
-                    getElementById("issue", document)
+                    getElementById("issue")
                         .andThen(click)
                         .whenError(console.error);
                 }
@@ -114,380 +114,380 @@ window.addEventListener("load", () => {
         }))
         .whenError(console.error);
 
-    getElementById("name", document)
+    getElementById("name")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["name"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("description", document)
+    getElementById("description")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["description"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("version", document)
+    getElementById("version")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["version"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("authorname", document)
+    getElementById("authorname")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["author", "name"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("authorurl", document)
+    getElementById("authorurl")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["author", "url"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("authoremail", document)
+    getElementById("authoremail")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["author", "email"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("keywords", document)
+    getElementById("keywords")
         .andThen(on("input", ({target: {value}}) => {
             return toList(value)
                 .andThen(objectPropertySet(packageJson, ["keywords"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("homepage", document)
+    getElementById("homepage")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["homepage"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("bugsurl", document)
+    getElementById("bugsurl")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["bugs", "url"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("bugsemail", document)
+    getElementById("bugsemail")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["bugs", "email"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
 
-    getElementById("license", document)
+    getElementById("license")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["license"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("fundingtype", document)
+    getElementById("fundingtype")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["funding", "type"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("fundingurl", document)
+    getElementById("fundingurl")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["funding", "url"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("files", document)
+    getElementById("files")
         .andThen(on("input", ({target: {value}}) => {
             return toList(value)
                 .andThen(objectPropertySet(packageJson, ["files"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("main", document)
+    getElementById("main")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["main"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("types", document)
+    getElementById("types")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["types"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("browser", document)
+    getElementById("browser")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["browser"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("bin", document)
+    getElementById("bin")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["bin"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("manname", document)
+    getElementById("manname")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["man", "name"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("manversion", document)
+    getElementById("manversion")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["man", "version"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("mandescription", document)
+    getElementById("mandescription")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["man", "description"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("manmain", document)
+    getElementById("manmain")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["man", "main"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("manman", document)
+    getElementById("manman")
         .andThen(on("input", ({target: {value}}) => {
             return toList(value)
                 .andThen(objectPropertySet(packageJson, ["man", "man"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("repositorytype", document)
+    getElementById("repositorytype")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["repository", "type"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("repositoryurl", document)
+    getElementById("repositoryurl")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["repository", "url"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("repositorydirectory", document)
+    getElementById("repositorydirectory")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["repository", "directory"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("enginesnode", document)
+    getElementById("enginesnode")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["engines", "node"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("enginesnpm", document)
+    getElementById("enginesnpm")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["engines", "npm"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("operatingsystems", document)
+    getElementById("operatingsystems")
         .andThen(on("input", ({target: {value}}) => {
             return toList(value)
                 .andThen(objectPropertySet(packageJson, ["os"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("centralprocessingunits", document)
+    getElementById("centralprocessingunits")
         .andThen(on("input", ({target: {value}}) => {
             return toList(value)
                 .andThen(objectPropertySet(packageJson, ["cpu"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("publishconfigregistry", document)
+    getElementById("publishconfigregistry")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["publishConfig", "registry"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("workspaces", document)
+    getElementById("workspaces")
         .andThen(on("input", ({target: {value}}) => {
             return toList(value)
                 .andThen(objectPropertySet(packageJson, ["workspaces"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("directoriesbin", document)
+    getElementById("directoriesbin")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["directories", "bin"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("directorieslib", document)
+    getElementById("directorieslib")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["directories", "lib"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("directoriesman", document)
+    getElementById("directoriesman")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["directories", "man"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("directoriesdoc", document)
+    getElementById("directoriesdoc")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["directories", "doc"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("directoriesexample", document)
+    getElementById("directoriesexample")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["directories", "example"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
         .whenError(console.error);
 
-    getElementById("directoriestest", document)
+    getElementById("directoriestest")
         .andThen(on("input", ({target: {value}}) => {
             return removeTrailingLeadingSpaces(value)
                 .andThen(objectPropertySet(packageJson, ["directories", "test"]))
-                .andThen(() => getElementById("code", document))
+                .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
         }))
