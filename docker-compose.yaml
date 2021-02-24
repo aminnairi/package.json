@@ -2,7 +2,7 @@ version: "3"
 
 services:
   npm:
-    image: node:15.0.0
+    image: node:15.0.1
     user: node
     working_dir: /home/node
     entrypoint: npm
@@ -11,7 +11,7 @@ services:
       - .:/home/node
 
   npx:
-    image: node:15.0.0
+    image: node:15.0.1
     user: node
     working_dir: /home/node
     entrypoint: npx
