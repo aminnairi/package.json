@@ -26,10 +26,6 @@ describe("type", () => {
             expect(typeOf(() => {})).to.equal("Function");
         });
 
-        it("should return the type for an asynchronous function", () => {
-            expect(typeOf(async () => {})).to.equal("AsyncFunction");
-        });
-
         it("should return the type for a symbol", () => {
             expect(typeOf(Symbol("symbol"))).to.equal("Symbol");
         });
