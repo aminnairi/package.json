@@ -10,7 +10,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: [".eslintrc.js", "tailwind.config.js"],
+            files: [".eslintrc.js", "tailwind.config.js", "test/*", "babel.config.js"],
             env: {
                 browser: true,
                 es2021: true,
