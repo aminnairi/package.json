@@ -4,6 +4,7 @@ import {getElementById, on, setAttribute, reset, focus, click, createElement, ap
 import {objectPropertySet, objectEmpty, objectLean} from "./javascript/object.js";
 import {copy} from "./javascript/clipboard.js";
 import {removeTrailingLeadingSpaces, toList} from "./javascript/string.js";
+import {version} from "../package.json";
 
 const packageJson = {
     author: {name: "", url: "", email: ""},
@@ -59,6 +60,10 @@ createElement("link")
     .andThen(setAttribute("href", "./css/index.css"))
     .andThen(setAttribute("rel", "stylesheet"))
     .andThen(appendTo(document.head))
+    .whenError(console.error);
+
+getElementById("version")
+    .andThen(setAttribute("innerText", `v${version}`))
     .whenError(console.error);
 
 window.addEventListener("load", () => {
