@@ -1,6 +1,6 @@
 import {describe, it} from "mocha";
 import chai from "chai";
-import {typeOf} from "../sources/javascript/type.mjs";
+import {typeOf} from "../sources/javascript/type.js";
 
 const {expect} = chai;
 
