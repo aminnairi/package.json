@@ -1,6 +1,6 @@
 import {describe, it} from "mocha";
 import chai from "chai";
-import {removeTrailingLeadingSpaces, toList} from "../sources/javascript/string.mjs";
+import {removeTrailingLeadingSpaces, toList} from "../sources/javascript/string.js";
 
 const {expect} = chai;
 

@@ -1,6 +1,6 @@
 import {describe, it} from "mocha";
 import chai from "chai";
-import {curry} from "../sources/javascript/functional.mjs";
+import {curry} from "../sources/javascript/functional.js";
 
 const {expect} = chai;
 

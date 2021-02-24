@@ -1,6 +1,6 @@
-import {error, ok} from "./result.mjs";
-import {curry} from "./functional.mjs";
-import {typeOf} from "./type.mjs";
+import {error, ok} from "./result.js";
+import {curry} from "./functional.js";
+import {typeOf} from "./type.js";
 
 export const createElement = name => {
     if (typeOf(name) !== "String") {

@@ -1,6 +1,6 @@
-import {ok, error} from "./result.mjs";
-import {curry} from "./functional.mjs";
-import {typeOf} from "./type.mjs";
+import {ok, error} from "./result.js";
+import {curry} from "./functional.js";
+import {typeOf} from "./type.js";
 
 export const objectPropertySet = curry((target, paths, value) => {
     if (typeOf(target) !== "Object") {

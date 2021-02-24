@@ -1,6 +1,6 @@
 import {describe, it} from "mocha";
 import chai from "chai";
-import {objectPropertySet, objectEmpty, objectLean} from "../sources/javascript/object.mjs";
+import {objectPropertySet, objectEmpty, objectLean} from "../sources/javascript/object.js";
 
 const {expect} = chai;
 

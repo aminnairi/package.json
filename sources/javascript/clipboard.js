@@ -1,4 +1,4 @@
-import {typeOf} from "./type.mjs";
+import {typeOf} from "./type.js";
 
 /**
  * Copy a text to the system clipboard

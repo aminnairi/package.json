@@ -1,5 +1,5 @@
-import {ok, error} from "./result.mjs";
-import {typeOf} from "./type.mjs";
+import {ok, error} from "./result.js";
+import {typeOf} from "./type.js";
 
 export const removeTrailingLeadingSpaces = text => {
     if (typeOf(text) !== "String") {

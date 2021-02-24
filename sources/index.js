@@ -1,9 +1,9 @@
 import "./css/index.css";
 
-import {getElementById, on, setAttribute, reset, focus, click, createElement, appendTo} from "./javascript/dom.mjs";
-import {objectPropertySet, objectEmpty, objectLean} from "./javascript/object.mjs";
-import {copy} from "./javascript/clipboard.mjs";
-import {removeTrailingLeadingSpaces, toList} from "./javascript/string.mjs";
+import {getElementById, on, setAttribute, reset, focus, click, createElement, appendTo} from "./javascript/dom.js";
+import {objectPropertySet, objectEmpty, objectLean} from "./javascript/object.js";
+import {copy} from "./javascript/clipboard.js";
+import {removeTrailingLeadingSpaces, toList} from "./javascript/string.js";
 
 const packageJson = {
     author: {name: "", url: "", email: ""},
