@@ -8,13 +8,13 @@ describe("object", () => {
     describe("objectPropertySet", () => {
         it("should return an error if the first parameter is not an object", () => {
             objectPropertySet("", [], "").whenError(error => {
-                expect(error).to.equal('target is not an object in objectPropertySet(paths, value, target), received ""');
+                expect(error).to.equal("target is not an object in objectPropertySet(paths, value, target), received \"\"");
             });
         });
 
         it("should return an error if the second parameter is not an array", () => {
             objectPropertySet({}, "", "").whenError(error => {
-                expect(error).to.equal('paths is not an array in objectPropertySet(paths, value, target), received ""');
+                expect(error).to.equal("paths is not an array in objectPropertySet(paths, value, target), received \"\"");
             });
         });
 
@@ -69,7 +69,7 @@ describe("object", () => {
             const expectation = {text: "", age: 0, happy: false, keywords: [], location: {latitude: 0, longitude: 0}};
             const result = objectEmpty(target).withDefault({});
 
-            expect(result).to.deep.equal(result);
+            expect(result).to.deep.equal(expectation);
         });
     });
 
@@ -85,7 +85,7 @@ describe("object", () => {
             const expectation = {keywords: ["first", "second"]};
             const result = objectLean(target).withDefault({});
 
-            expect(result).to.deep.equal(result);
+            expect(result).to.deep.equal(expectation);
         });
     });
 });

@@ -216,7 +216,7 @@ window.addEventListener("load", () => {
                 .andThen(() => getElementById("code"))
                 .andThen(setAttribute("innerText", JSON.stringify(objectLean(packageJson).withDefault({}), null, 2)))
                 .whenError(console.error);
-        }))
+        }));
 
     getElementById("license")
         .andThen(on("input", ({target: {value}}) => {

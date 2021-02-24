@@ -27,7 +27,7 @@ export const getElementById = (identifier) => {
             return ok(foundElement);
         }
 
-        return error(`No element with an id of ${JSON.stringify(identifier)} found in the element ${JSON.stringify(element)}`);
+        return error(`No element with an id of ${JSON.stringify(identifier)} found in the DOM`);
     } catch {
         return error("Current context is not a browser");
     }
@@ -128,7 +128,7 @@ export const click = element => {
     } catch {
         return error("Current context is not a browser");
     }
-}
+};
 
 export const appendTo = curry((parent, child) => {
     try {

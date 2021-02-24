@@ -7,7 +7,7 @@ export const removeTrailingLeadingSpaces = text => {
     }
 
     return ok(text.trim());
-}
+};
 
 export const toList = text => {
     if (typeOf(text) !== "String") {
@@ -15,4 +15,4 @@ export const toList = text => {
     }
 
     return ok(text.split(",").map(part => part.trim()).filter(Boolean));
-}
+};
