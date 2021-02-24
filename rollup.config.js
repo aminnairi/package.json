@@ -8,7 +8,7 @@ import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import remove from "rollup-plugin-delete";
-import babel from "@rollup/plugin-babel"
+import babel from "@rollup/plugin-babel";
 import json from "@rollup/plugin-json";
 
 export default {
