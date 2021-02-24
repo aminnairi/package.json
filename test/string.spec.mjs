@@ -4,8 +4,6 @@ import {removeTrailingLeadingSpaces, toList} from "../sources/javascript/string.
 
 const {expect} = chai;
 
-// TODO: all test (+object forgot some functions)
-
 describe("string", () => {
     describe("removeTrailingLeadingSpaces", () => {
         it("should return an error if the first parameter is not a string", () => {
