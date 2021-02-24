@@ -1,8 +1,9 @@
 import {error, ok} from "./result.mjs";
 import {curry} from "./functional.mjs";
+import {typeOf} from "./type.mjs";
 
-export const createElement = (name) => {
-    if (typeof name !== "string") {
+export const createElement = name => {
+    if (typeOf(name) !== "String") {
         return error(`name is not a string in createElement(name), received ${JSON.stringify(name)}`);
     }
 
@@ -12,7 +13,7 @@ export const createElement = (name) => {
 };
 
 export const getElementById = (identifier, element) => {
-    if (typeof identifier !== "string") {
+    if (typeOf(identifier) !== "String") {
         return error(`identifier is not a string in getElementById(identifier, element), received ${JSON.stringify(identifier)}`);
     }
 
@@ -20,8 +21,8 @@ export const getElementById = (identifier, element) => {
         return error(`element is not an Element in getElementById(identifier, element), received ${JSON.stringify(element)}`);
     }
 
-    if (typeof element.getElementById !== "function") {
-        return error(`No getElementById method available on element in getElementById(identifier, element), received ${JSON.stringify(element)}`);
+    if (typeOf(element.getElementById) !== "Function") {
+        return error(`No getElementById synchronous method available on element in getElementById(identifier, element), received ${JSON.stringify(element)}`);
     }
 
     const foundElement = element.getElementById(identifier);
@@ -34,12 +35,12 @@ export const getElementById = (identifier, element) => {
 };
 
 export const on = curry((event, callback, element) => {
-    if (typeof event !== "string") {
+    if (typeOf(event) !== "String") {
         return error(`event is not a string in on(event, callback, element), received ${JSON.stringify(event)}`);
     }
 
-    if (typeof callback !== "function") {
-        return error(`callback is not a function in on(event, callback, element), received ${JSON.stringify(callback)}`);
+    if (typeOf(callback) !== "Function") {
+        return error(`callback is not a synchronous function in on(event, callback, element), received ${JSON.stringify(callback)}`);
     }
 
     if (!(element instanceof Document) && !(element instanceof Element)) {
@@ -52,7 +53,7 @@ export const on = curry((event, callback, element) => {
 });
 
 export const getAttribute = curry((attribute, element) => {
-    if (typeof attribute !== "string") {
+    if (typeOf(attribute) !== "String") {
         return error(`attribute is not a string in getAttribute(attribute, element), received, ${JSON.stringify(attribute)}`);
     }
 
@@ -64,11 +65,11 @@ export const getAttribute = curry((attribute, element) => {
 });
 
 export const setAttribute = curry((attribute, value, element) => {
-    if (typeof attribute !== "string") {
+    if (typeOf(attribute) !== "String") {
         return error(`attribute is not a string in setAttribute(attribute, value, element), received, ${JSON.stringify(attribute)}`);
     }
 
-    if (typeof value !== "string") {
+    if (typeOf(value) !== "String") {
         return error(`value is not a string in setAttribute(attribute, value, element), received, ${JSON.stringify(value)}`);
     }
 

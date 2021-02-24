@@ -1,7 +1,8 @@
 import {ok, error} from "./result.mjs";
+import {typeOf} from "./type.mjs";
 
 export const removeTrailingLeadingSpaces = text => {
-    if (typeof text !== "string") {
+    if (typeOf(text) !== "String") {
         return error(`text is not a string in removeTrailingLeadingSpaces(text), received ${JSON.stringify(text)}`);
     }
 
@@ -9,7 +10,7 @@ export const removeTrailingLeadingSpaces = text => {
 }
 
 export const toList = text => {
-    if (typeof text !== "string") {
+    if (typeOf(text) !== "String") {
         return error(`text is not a string in toList(text), received ${JSON.stringify(text)}`);
     }
 

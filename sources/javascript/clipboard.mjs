@@ -1,3 +1,5 @@
+import {typeOf} from "./type.mjs";
+
 /**
  * Copy a text to the system clipboard
  * @param {string} text Text to copy to the system clipboard
@@ -9,11 +11,11 @@ export const copy = text => {
             reject(new Error("Current context is not a browser"));
         }
 
-        if (!navigator.clipboard || !navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
+        if (!navigator.clipboard || !navigator.clipboard || typeOf(navigator.clipboard.writeText) !== "Function") {
             reject(new Error("Current context does not support the clipboard API"));
         }
 
-        if (typeof text !== "string") {
+        if (typeOf(text) !== "String") {
             return reject(new Error(`text is not a string in copy(text), received ${JSON.stringify(text)}`));
         }
 

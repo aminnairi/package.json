@@ -1,16 +1,17 @@
 import {ok, error} from "./result.mjs";
 import {curry} from "./functional.mjs";
+import {typeOf} from "./type.mjs";
 
 export const objectPropertySet = curry((target, paths, value) => {
-    if (typeof target !== "object") {
+    if (typeOf(target) !== "Object") {
         return error(`target is not an object in objectPropertySet(paths, value, target), received ${JSON.stringify(target)}`);
     }
 
-    if (!Array.isArray(paths)) {
+    if (typeOf(paths) !== "Array") {
         return error(`paths is not an array in objectPropertySet(paths, value, target), received ${JSON.stringify(paths)}`);
     }
 
-    if (paths.some(path => typeof path !== "string")) {
+    if (paths.some(path => typeOf(path) !== "String")) {
         return error(`paths does not contain only strings in objectPropertySet(paths, value, target), received ${JSON.stringify(paths)}`);
     }
 
@@ -33,32 +34,32 @@ export const objectPropertySet = curry((target, paths, value) => {
     return ok(target);
 });
 
-export const objectEmpty = (target) => {
-    if (Object.prototype.toString.call(target) !== "[object Object]") {
+export const objectEmpty = target => {
+    if (typeOf(target) !== "Object") {
         return error(`target is not an object in objectEmpty(target), received ${JSON.stringify(target)}`);
     }
 
     Object.keys(target).forEach(key => {
         const targetValue = target[key];
-        const targetValueType = typeof targetValue;
+        const targetValueType = typeOf(targetValue);
 
-        if (targetValueType === "string") {
+        if (targetValueType === "String") {
             target[key] = "";
         }
 
-        if (targetValueType === "boolean") {
+        if (targetValueType === "Boolean") {
             target[key] = false;
         }
 
-        if (targetValueType === "number") {
+        if (targetValueType === "Number") {
             target[key] = 0;
         }
 
-        if (Array.isArray(targetValue)) {
+        if (targetValueType === "Array") {
             target[key] = [];
         }
 
-        if (targetValueType === "object") {
+        if (targetValueType === "Object") {
             objectEmpty(target[key]);
         }
     });
@@ -67,15 +68,14 @@ export const objectEmpty = (target) => {
 };
 
 export const objectLean = target => {
-    if (Object.prototype.toString.call(target) !== "[object Object]") {
-        console.log("mauvais target");
+    if (typeOf(target) !== "Object") {
         return error(`target is not an object in objectLean(target), received ${JSON.stringify(target)}`);
     }
 
     return ok(Object.entries(target).reduce((oldTarget, [key, value]) => {
-        const valueType = Object.prototype.toString.call(value);
+        const valueType = typeOf(value);
 
-        if (valueType === "[object Object]") {
+        if (valueType === "Object") {
             const leaned = objectLean(value).withDefault({});
 
             if (Object.keys(leaned).length === 0) {
@@ -85,7 +85,7 @@ export const objectLean = target => {
             return {...oldTarget, [key]: leaned};
         }
 
-        if (valueType === "[object Array]") {
+        if (valueType === "Array") {
             const leaned = value.map(item => item.trim()).filter(Boolean);
 
             if (leaned.length === 0) {
@@ -95,7 +95,7 @@ export const objectLean = target => {
             return {...oldTarget, [key]: leaned};
         }
 
-        if (valueType === "[object String]" && value.trim().length === 0) {
+        if (valueType === "String" && value.trim().length === 0) {
             return oldTarget;
         }
 
