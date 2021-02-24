@@ -8,6 +8,7 @@ import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import remove from "rollup-plugin-delete";
+import babel from "@rollup/plugin-babel"
 
 export default {
     input: resolve("sources", "index.mjs"),
@@ -37,8 +38,11 @@ export default {
                 }
             ]
         }),
-        nodeResolve(),
         commonjs(),
+        nodeResolve(),
+        babel({
+            babelHelpers: "bundled"
+        }),
         postcss({
             plugins: [
                 tailwindcss,
