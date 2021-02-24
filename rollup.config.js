@@ -11,7 +11,7 @@ import remove from "rollup-plugin-delete";
 import babel from "@rollup/plugin-babel"
 
 export default {
-    input: resolve("sources", "index.mjs"),
+    input: resolve("sources", "index.js"),
     plugins: [
         remove({
             targets: [
