@@ -9,6 +9,7 @@ import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import remove from "rollup-plugin-delete";
 import babel from "@rollup/plugin-babel"
+import json from "@rollup/plugin-json";
 
 export default {
     input: resolve("sources", "index.js"),
@@ -51,6 +52,7 @@ export default {
             ],
             extract: "css/index.css"
         }),
+        json(),
         terser()
     ],
     output: {
