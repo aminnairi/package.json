@@ -1,7 +1,7 @@
 {
   "name": "@aminnairi/package.json",
   "description": "Create your Node.js project's package.json file from your browser.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Amin NAIRI",
     "url": "https://github.com/aminnairi",
