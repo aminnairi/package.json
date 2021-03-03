@@ -62,7 +62,7 @@ createElement("link")
     .andThen(appendTo(document.head))
     .whenError(console.error);
 
-getElementById("version")
+getElementById("packageversion")
     .andThen(setAttribute("innerText", `v${version}`))
     .whenError(console.error);
 
